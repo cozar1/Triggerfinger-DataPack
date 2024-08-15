@@ -17,7 +17,6 @@ execute as @e[tag=fireball] store result entity @s Motion[1] double 0.002 run sc
 execute as @e[tag=fireball] store result entity @s Motion[2] double 0.002 run scoreboard players get @s MotionZ
 # ----- Bullet Stuff ------------------------------------------------------------------------------------------------------------
 
-
 # removes ammo from the player when their gun cooldown and reload cooldown are zero
 execute if items entity @a[scores={Rclick=1..,gun_cooldown=..0,reload_cooldown=..0}] weapon.mainhand carrot_on_a_stick[custom_data~{aac_honey_badger:1}] run scoreboard players remove @p aac_honey_badger_ammo 1
 # sets the players gun cooldown when they click and not currenty reloading or in cooldown

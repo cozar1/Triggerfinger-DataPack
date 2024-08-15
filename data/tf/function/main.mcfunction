@@ -1,11 +1,11 @@
 schedule function ss:cooldown 1t
 
-function ss:aac_honey_badger
-function ss:fn_p90
-function ss:browning_auto_5
-function ss:vsk_94
-function ss:glock_33
-function ss:gives/main
+function tf:aac_honey_badger
+function tf:fn_p90
+function tf:browning_auto_5
+function tf:vsk_94
+function tf:glock_33
+function tf:gives/main
 
 # gives the player tags depending on the gun they are holding:
 execute as @a run execute if items entity @a weapon.mainhand carrot_on_a_stick[custom_data~{aac_honey_badger:1}] run tag @s add aac_honey_badger
