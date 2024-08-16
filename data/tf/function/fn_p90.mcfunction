@@ -1,5 +1,5 @@
-execute as @a[scores={reload_cooldown=..0},tag=fn_p90] run title @s actionbar ["",{"text":"Ammo: ["},{"score":{"name":"@s","objective":"fn_p90_ammo"}},{"text":"/"},{"text":"50"},{"text":"]"}]
-
+#displays ammo if not reloading
+execute as @a[scores={reload_cooldown=..0},tag=fn_p90] run title @s actionbar ["",{"text":"Ammo: ["},{"score":{"name":"@s","objective":"fn_p90_ammo"}},{"text":"/"},{"text":"20"},{"text":"]"}]
 
 # ----- Bullet Stuff ------------------------------------------------------------------------------------------------------------
 execute as @a[scores={Rclick=1..,gun_cooldown=..0,reload_cooldown=..0},tag=fn_p90] rotated as @s positioned 0 0 0 align xyz run summon minecraft:armor_stand ^ ^ ^1 {Invulnerable:1b,NoGravity:1b,Tags:["aim"]}
@@ -21,9 +21,9 @@ execute as @e[tag=fireball] store result entity @s Motion[2] double 0.002 run sc
 # removes ammo from the player when their gun cooldown and reload cooldown are zero
 execute if items entity @a[scores={Rclick=1..,gun_cooldown=..0,reload_cooldown=..0}] weapon.mainhand carrot_on_a_stick[custom_data~{fn_p90:1}] run scoreboard players remove @p fn_p90_ammo 1
 # sets the players gun cooldown when they click and not currenty reloading or in cooldown
-execute if items entity @a[scores={Rclick=1..,gun_cooldown=..0,reload_cooldown=..0}] weapon.mainhand carrot_on_a_stick[custom_data~{fn_p90:1}] run scoreboard players set @p gun_cooldown 0
+execute if items entity @a[scores={Rclick=1..,gun_cooldown=..0,reload_cooldown=..0}] weapon.mainhand carrot_on_a_stick[custom_data~{fn_p90:1}] run scoreboard players set @p gun_cooldown 4
 
 # If the player has clicked, doesnt have any ammo and isnt currently reloading it will reload
 execute as @a[scores={Rclick=1..,fn_p90_ammo=..0,reload_cooldown=..0}] run scoreboard players set @s reload_cooldown 20
 # if the player isnt currentling reloading and has not ammo then it reloads the ammo because this can only happen after the reload has started.
-scoreboard players set @a[scores={reload_cooldown=..0,fn_p90_ammo=..0}] fn_p90_ammo 50
+scoreboard players set @a[scores={reload_cooldown=..0,fn_p90_ammo=..0}] fn_p90_ammo 20
