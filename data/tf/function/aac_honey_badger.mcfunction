@@ -18,9 +18,9 @@ execute as @e[tag=fireball] store result entity @s Motion[2] double 0.002 run sc
 # ----- Bullet Stuff ------------------------------------------------------------------------------------------------------------
 
 # removes ammo from the player when their gun cooldown and reload cooldown are zero
-execute if items entity @a[scores={Rclick=1..,gun_cooldown=..0,reload_cooldown=..0}] weapon.mainhand carrot_on_a_stick[custom_data~{aac_honey_badger:1}] run scoreboard players remove @p aac_honey_badger_ammo 1
+execute as @a[scores={Rclick=1..,gun_cooldown=..0,reload_cooldown=..0}] if items entity @s[scores={Rclick=1..,gun_cooldown=..0,reload_cooldown=..0}] weapon.mainhand carrot_on_a_stick[custom_data~{aac_honey_badger:1}] run scoreboard players remove @s aac_honey_badger_ammo 1
 # sets the players gun cooldown when they click and not currenty reloading or in cooldown
-execute if items entity @a[scores={Rclick=1..,gun_cooldown=..0,reload_cooldown=..0}] weapon.mainhand carrot_on_a_stick[custom_data~{aac_honey_badger:1}] run scoreboard players set @p gun_cooldown 4
+execute as @a[scores={Rclick=1..,gun_cooldown=..0,reload_cooldown=..0}] if items entity @s[scores={Rclick=1..,gun_cooldown=..0,reload_cooldown=..0}] weapon.mainhand carrot_on_a_stick[custom_data~{aac_honey_badger:1}] run scoreboard players set @s gun_cooldown 4
 
 # If the player has clicked, doesnt have any ammo and isnt currently reloading it will reload
 execute as @a[scores={Rclick=1..,aac_honey_badger_ammo=..0,reload_cooldown=..0}] run scoreboard players set @s reload_cooldown 20

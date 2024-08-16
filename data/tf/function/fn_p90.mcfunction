@@ -1,5 +1,5 @@
 #displays ammo if not reloading
-execute as @a[scores={reload_cooldown=..0},tag=fn_p90] run title @s actionbar ["",{"text":"Ammo: ["},{"score":{"name":"@s","objective":"fn_p90_ammo"}},{"text":"/"},{"text":"20"},{"text":"]"}]
+execute as @a[scores={reload_cooldown=..0},tag=fn_p90] run title @s actionbar ["",{"text":"Ammo: ["},{"score":{"name":"@s","objective":"fn_p90_ammo"}},{"text":"/"},{"text":"50"},{"text":"]"}]
 
 # ----- Bullet Stuff ------------------------------------------------------------------------------------------------------------
 execute as @a[scores={Rclick=1..,gun_cooldown=..0,reload_cooldown=..0},tag=fn_p90] rotated as @s positioned 0 0 0 align xyz run summon minecraft:armor_stand ^ ^ ^1 {Invulnerable:1b,NoGravity:1b,Tags:["aim"]}
